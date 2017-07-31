@@ -1,7 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { CareersComponent } from './components/careers/careers.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -13,26 +12,16 @@ import { MobileComponent } from './components/what-we-do/mobile-app-development/
 import { QualityComponent } from './components/what-we-do/quality-assurance/quality.component';
 import { WebsiteComponent } from './components/what-we-do/website-development/website.component';
 
-import { routing } from './app.routing';
+const routes: Routes = [{ path: '', component: HomeComponent },
+				{ path: 'careers', component: CareersComponent },
+				{ path: 'contact', component: ContactComponent },
+				{ path: 'work', component: WorkComponent },
+				{ path: 'who', component: WhoComponent },
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    CareersComponent,
-    ContactComponent,
-    WorkComponent,
-    WhoComponent,
-    EnterpriseComponent,
-    MobileComponent,
-    QualityComponent,
-    WebsiteComponent
-  ],
-  imports: [
-    BrowserModule,
-    routing
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+				{ path: 'enterprise', component: EnterpriseComponent },
+				{ path: 'mobile', component: MobileComponent },
+				{ path: 'quality', component: QualityComponent },
+				{ path: 'website', component: WebsiteComponent }
+];
+
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

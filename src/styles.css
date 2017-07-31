@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@media (min-width: 979px) {
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+		display: block;
+		margin-top:0px;
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar {
+		height: 56px;
+	}
+}
+
+.navbar-nav > li > a.icon-links {
+	padding-top: 0px;
+}
+
